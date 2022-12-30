@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className='bg-[#EDEDED] lg:px-16 px-6'>
+      <div className='bg-[#f6f8fc] lg:px-16 px-6'>
         <Top />
         <TopNews />
       </div>
