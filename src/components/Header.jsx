@@ -1,14 +1,39 @@
+import { useState, useEffect } from 'react'
+
 function Header(){
+	const [theme, setTheme] = useState("light")
+
+	useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme")
+    );
+    setTheme(localStorage.getItem("theme"));
+  }, []);
+
+	const switchTheme = () => {
+      if (theme === "light") {
+       saveTheme("dark");
+      } else {
+       saveTheme("light");
+      }
+     };
+
+    const saveTheme = (theme) => {
+     setTheme(theme);
+     localStorage.setItem("theme", theme);
+     document.documentElement.setAttribute("data-theme", theme);
+    };
 	return (
-		<header className='flex lg:mx-12 py-2 items-center border-b border-b border-gray-300 px-6'>
+		<header className='flex py-2 items-center bg-white border-b lg:mx-16 border-b border-gray-300 px-6'>
 			<h1 className='text-[21px] font-semibold'>
 				<span className='text-blue-500'>P</span>
 				<span className='text-green-500'>r</span>
 				<span className='text-red-500'>o</span>&nbsp;
 				<span className='text-gray-600'>News</span>
 			</h1>
-			<ul className='flex justify-evenly grow items-center px-3 text-[17px] font-medium text-gray-700'>
-				<li className='hover:text-black cursor-pointer'>Home</li> <span className='border'>
+			<ul className='flex justify-evenly grow items-center px-3 text-[17px] font-medium text-gray-600'>
+				<li className='hover:text-black cursor-pointer'>Home</li>
 				<li className='hover:text-black cursor-pointer'>Latest</li>
 				<li className='hover:text-black cursor-pointer'>India</li>
 				<li className='hover:text-black cursor-pointer'>World</li>
