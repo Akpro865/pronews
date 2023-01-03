@@ -2,9 +2,9 @@ import weathericon from '../assets/cloudy.png'
 
 function Top() {
   return (
-    <section className='flex justify-between items-center py-4'>
+    <section className='flex justify-between items-center py-4 lg:mx-2'>
       	<section>
-      		<h2 className='text-3xl py-1'>Your briefing</h2>
+      		<h2 className='text-[28px] font-sans py-1'>Your briefing</h2>
       		<p className='text-gray-700 text-[15px]'>Friday, 30 December</p>
     	</section> 
     	<section className='flex bg-white px-2 py-2 items-center rounded-xl'>
