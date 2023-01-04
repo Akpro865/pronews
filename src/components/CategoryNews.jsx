@@ -29,7 +29,7 @@ function CategoryNews(){
 
 	console.log(category,query)
 	return (
-		<section className='w-[80%] mx-auto'>
+		<section className='px-24'>
 		    	{
 		    		query.data ? query.data.articles.map((headline, i)=>(
 		    			<a href={`${headline.url}`} target="_blank" key={i}>			    			

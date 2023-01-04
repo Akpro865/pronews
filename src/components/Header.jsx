@@ -1,63 +1,34 @@
-import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import TopBar from './TopBar'
+import '../App.css'
 
-function Header(){
-	const [theme, setTheme] = useState("light")
-
-	useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      localStorage.getItem("theme")
-    );
-    setTheme(localStorage.getItem("theme"));
-  }, []);
-
-	const switchTheme = () => {
-      if (theme === "light") {
-       saveTheme("dark");
-      } else {
-       saveTheme("light");
-      }
-     };
-
-    const saveTheme = (theme) => {
-     setTheme(theme);
-     localStorage.setItem("theme", theme);
-     document.documentElement.setAttribute("data-theme", theme);
-    };
+function Header(){	
 	return (
-		<header className='flex py-3 items-center bg-white sticky top-0 border-b lg:px-24 border-b border-gray-300'>
-		 <Link to='/'>
-			<h1 className='text-[21px] font-semibold'>
-				<span className='text-blue-500'>P</span>
-				<span className='text-green-500'>r</span>
-				<span className='text-red-500'>o</span>&nbsp;
-				<span className='text-gray-600 border-r-[3px] pr-3'>News</span>
-			</h1>
-		 </Link>
-			<ul className='flex justify-between grow items-center px-3 text-[17px] font-medium text-gray-600'>
-				<NavLink to='/category/latest'>
-					<li className='hover:text-blue-500 cursor-pointer'>Latest</li>
+		<header className='bg-white sticky top-0 border-b lg:px-24 border-b border-gray-300'>		 
+			<TopBar />
+			<ul className='flex justify-between items-center px-3 font-medium text-gray-600'>
+				<NavLink to='/' className={({isActive}) => (isActive ? 'active' : 'none')} >
+					<li className='hover:text-blue-500 cursor-pointer'>Home</li>
 				</NavLink>
-				<NavLink to='/category/india'>
+				<NavLink to='/category/india'  className={({isActive}) => (isActive ? 'active' : 'none')}>
 					<li className='hover:text-blue-500 cursor-pointer'>India</li>				
 				</NavLink>
-				<NavLink to='/category/business'>
+				<NavLink to='/category/business'  className={({isActive}) => (isActive ? 'active' : 'none')}>
 					<li className='hover:text-blue-500 cursor-pointer'>Business</li>
 				</NavLink>
-				<NavLink to='/category/technology'>
+				<NavLink to='/category/technology'  className={({isActive}) => (isActive ? 'active' : 'none')}>
 					<li className='hover:text-blue-500 cursor-pointer'>Technology</li>
 				</NavLink>
-				<NavLink to='/category/science'>
+				<NavLink to='/category/science'  className={({isActive}) => (isActive ? 'active' : 'none')}>
 					<li className='hover:text-blue-500 cursor-pointer'>Science</li>
 				</NavLink>
-				<NavLink to='/category/health'>
+				<NavLink to='/category/health'  className={({isActive}) => (isActive ? 'active' : 'none')}>
 					<li className='hover:text-blue-500 cursor-pointer'>Health</li>
 				</NavLink>
-				<NavLink to='/category/sports'>
+				<NavLink to='/category/sports'  className={({isActive}) => (isActive ? 'active' : 'none')}>
 					<li className='hover:text-blue-500 cursor-pointer'>Sports</li>
 				</NavLink>
-				<NavLink to='/category/entertainment'>
+				<NavLink to='/category/entertainment'  className={({isActive}) => (isActive ? 'active' : 'none')}>
 					<li className='hover:text-blue-500 cursor-pointer'>Entertainment</li>
 				</NavLink>
 			</ul>
