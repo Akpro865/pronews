@@ -3,6 +3,7 @@
  import { useState } from 'react'
  import { getBusiness, getEntertainment, getHealth,
   getScience, getSports, getTechnology, getIndia, getTopStories } from '../api/newsapi'
+import CategoryTop from './CategoryTop'
 
 function CategoryNews(){
 	const { category } = useParams()
@@ -27,9 +28,11 @@ function CategoryNews(){
 		query = useQuery('indiatNews', getIndia)
 	}
 
-	console.log(category,query)
+	console.log(typeof(category), category,query)
 	return (
-		<section className='px-24'>
+		<section className='lg:px-24'>
+		<CategoryTop category={category}/>
+		    <div className='rounded-2xl bg-white'>
 		    	{
 		    		query.data ? query.data.articles.map((headline, i)=>(
 		    			<a href={`${headline.url}`} target="_blank" key={i}>			    			
@@ -44,9 +47,9 @@ function CategoryNews(){
 			   				</section>
 			 			</a>
 		    		)) : null
-		    	}		    
-	    </section>
-		
+		    	}
+		    </div>
+	    </section>	
 	)
 }
 

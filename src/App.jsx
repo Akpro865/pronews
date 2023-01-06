@@ -17,13 +17,15 @@ function App() {
   }, [])
 
   return (
+    <div className='bg-[#f6f8fc]'>
     <Router>
       <Header />      
       <Routes>
         <Route path='/' element={<Home headlines={headlines}/>} />
-        <Route path='/category/:category' element={<CategoryNews />} />        
+        <Route path='/category/:category' element={<CategoryNews />} />    
       </Routes>      
     </Router>
+    </div>
   )
 }
 

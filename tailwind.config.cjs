@@ -8,6 +8,8 @@ module.exports = {
     "./src/components/CategoryNews.jsx",
     "./src/components/TopBar.jsx",
     "./src/components/SearchBar.jsx",
+    "./src/components/CategoryTop.jsx",
+    "./src/components/CategoryIcon.jsx",
     "./src/screen/TopNews.jsx",    
     "./src/screen/ForYou.jsx",
     "./src/screen/Categories.jsx",
