@@ -18,7 +18,7 @@ function Categories(){
 	console.log('t',EntertainmentQuery)
 	return (
 		<>
-			<h3 className='py-4 px-2 text-[28px] text-black'>Choosen For You</h3>			
+			<h3 className='py-4 px-2 text-[28px]'>Choosen For You</h3>			
 				<div className='flex justify-between flex-wrap'>	
 					{BusinessQuery.data ? <CategoryCard title='Business' headlines={ BusinessQuery.data.articles.slice(0, 4) }/> : null }
 			  	{TechnologyQuery.data ? <CategoryCard title='Technology' headlines={ TechnologyQuery.data.articles.slice(0, 4) }/> : null }

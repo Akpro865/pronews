@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 
 function CategoryCard({title, headlines}){
 	return (
-		<section className='w-[360px] m-2 px-2 bg-white rounded-xl'>
+		<section className='w-[360px] m-2 px-2 bg-background-color-card rounded-xl'>
 			<Link to={`/category/${title.toLowerCase()}`} >
-		     <h3 className='p-3 text-xl text-[#1867dc] border-b flex items-center'>{title} <MdArrowForwardIos className='pl-1'/></h3>     
+		     <h3 className='p-3 text-xl text-[#1867dc] border-b border-background-border flex items-center'>{title} <MdArrowForwardIos className='pl-1'/></h3>     
 		    </Link>
 		    <section className='p-2'>
 		    	{
 		    		headlines ? headlines.map((headline, i)=>(
-		    			<a href={`${headline.url}`} target="_blank" key={i} className='flex my-1.5 items-center py-3 border-b'>
+		    			<a href={`${headline.url}`} target="_blank" key={i} className='flex my-1.5 items-center py-3 border-b border-background-border'>
 			    			<article className='basis-3/4 p-1'>{headline.title}</article>
 			   				<img src={headline.urlToImage} className='h-16 w-24 rounded-xl basis-1/4 object-cover' />
 			 			</a>

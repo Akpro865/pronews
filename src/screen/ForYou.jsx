@@ -7,12 +7,12 @@ import you5 from '../assets/you5.jpg'
 function ForYou({headlines}) {
   return (
     <section>
-      <h3 className='py-2 text-xl text-[#1867dc] border-b cursor-pointer'>Picks for you</h3>     
+      <h3 className='py-2 text-xl text-[#1867dc] border-b border-background-border cursor-pointer'>Picks for you</h3>     
       <section className='p-3'>
         {
           headlines ? headlines.slice(0,10).reverse().map((headline,i)=>(
-            <a href={`${headline.url}`} target='_blank' key={i} className='flex my-1 items-center py-3 border-b'>
-              <article className='basis-3/4 p-1'>{headline.title.slice(0,100)}</article>
+            <a href={`${headline.url}`} target='_blank' key={i} className='flex my-1 items-center py-3 border-b border-background-border'>
+              <article className='basis-3/4 p-1 '>{headline.title.slice(0,100)}</article>
               <div className='basis-1/4'>
                 <img src={headline.urlToImage} alt='img' className='h-16 w-full rounded-xl object-cover' />
               </div>

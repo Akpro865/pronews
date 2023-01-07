@@ -16,7 +16,16 @@ module.exports = {
     "./src/screen/Home.jsx",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "secondary": "var(--text-secondary)",
+        "background-color-behind": "var(--background-color-behind)",
+        "background-color-card": "var(--background-color-card)",
+        "box-shadow": "var(--box-shadow)",
+        "background-color-input": "var(--background-color-input)",
+        "background-border": "var(--background-border)",
+      },
+    },
   },
   plugins: [],
 }

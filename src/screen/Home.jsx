@@ -8,7 +8,7 @@ import TopNews from './TopNews'
 
 function Home({headlines}){
 	return (
-		<div className='bg-[#f6f8fc] lg:px-24'>
+		<div className='bg-background-color-behind lg:px-24'>
 			<Top /> 
 			<TopNews headlines={headlines}/>
 			<Categories />

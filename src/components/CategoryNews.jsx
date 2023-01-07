@@ -32,17 +32,17 @@ function CategoryNews(){
 	return (
 		<section className='lg:px-24'>
 		<CategoryTop category={category}/>
-		    <div className='rounded-2xl bg-white'>
+		    <div className='rounded-2xl bg-background-color-card'>
 		    	{
 		    		query.data ? query.data.articles.map((headline, i)=>(
 		    			<a href={`${headline.url}`} target="_blank" key={i}>			    			
-		    				<section className='flex p-3 py-5 border-b-2'>
+		    				<section className='flex p-3 py-5 border-b-2 border-background-border'>
 		    					<div className='basis-1/4'>
 			   						<img src={headline.urlToImage} className='h-40 w-full rounded-xl basis-1/4 object-cover' />
 			   					</div>
 			   					<section className='pl-5 basis-3/4'>
 			   						<article className='text-[24px]'>{headline.title ? headline.title : null}</article>
-			   						<article className='indent-8 text-gray-800'>{headline.description ? headline.description : null}</article>
+			   						<article className='indent-8 text-secondary'>{headline.description ? headline.description : null}</article>
 			   					</section>
 			   				</section>
 			 			</a>

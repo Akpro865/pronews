@@ -17,7 +17,7 @@ function App() {
   }, [])
 
   return (
-    <div className='bg-[#f6f8fc]'>
+    <div className='bg-background-color-behind'>
     <Router>
       <Header />      
       <Routes>
